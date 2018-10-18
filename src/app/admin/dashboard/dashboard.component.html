@@ -4,7 +4,9 @@
         <th>Student Name</th>
         <th>Result</th>
     </thead>
-    <tbody>
-
+    <tbody *ngFor='let user of user'>
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.result}}</td>
     </tbody>
 </table>

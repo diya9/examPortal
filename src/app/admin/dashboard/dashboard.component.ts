@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  user: User;
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.getUsers().subscribe(data => this.user = data)
   }
 
 }

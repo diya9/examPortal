@@ -8,12 +8,12 @@
             <h5>{{question.question}}</h5>
             <div class="row text-left options">
                 <div class="col-6 option">
-                    <input type="radio" name="option" (click)='onClick(question.id,question.option1)'>{{question.option1}}<br>
-                    <input type="radio" name="option" (click)='onClick(question.id,question.option2)'>{{question.option2}}
+                    <input type="radio" name="option" value="{{question.option1}}" (change)='onClick(question.id,question.option1)'>{{question.option1}}<br>
+                    <input type="radio" name="option" value="{{question.option2}}" (change)='onClick(question.id,question.option2)'>{{question.option2}}
                 </div>
                 <div class="col-6 option">
-                    <input type="radio" name="option" (click)='onClick(question.id,question.option3)'>{{question.option3}}<br>
-                    <input type="radio" name="option" (click)='onClick(question.id,question.option4)'>{{question.option4}}
+                    <input type="radio" name="option" value="{{question.option3}}" (change)='onClick(question.id,question.option3)'>{{question.option3}}<br>
+                    <input type="radio" name="option" value="{{question.option4}}" (change)='onClick(question.id,question.option4)'>{{question.option4}}
                 </div>
             </div>
         </div>

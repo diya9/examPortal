@@ -11,10 +11,10 @@ const routes: Routes = [
     path: '',
     component: LoginComponent
   },
-  {
+  /*{
     path: 'admin',
     loadChildren: 'app/admin/admin.module#AdminModule'
-  },
+  },*/
   {
     path: 'register',
     component: RegisterComponent
