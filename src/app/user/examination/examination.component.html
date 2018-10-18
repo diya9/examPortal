@@ -1,0 +1,22 @@
+<div class="container">
+    <h3>Welcome {{name}} !!!</h3>
+    <div class='card' *ngFor='let question of questions'>
+        <h4 class="card-title">
+            Question {{question.id}}
+        </h4>
+        <div class="card-body">
+            <h5>{{question.question}}</h5>
+            <div class="row text-left options">
+                <div class="col-6 option">
+                    <input type="radio" name="option" (click)='onClick(question.id,question.option1)'>{{question.option1}}<br>
+                    <input type="radio" name="option" (click)='onClick(question.id,question.option2)'>{{question.option2}}
+                </div>
+                <div class="col-6 option">
+                    <input type="radio" name="option" (click)='onClick(question.id,question.option3)'>{{question.option3}}<br>
+                    <input type="radio" name="option" (click)='onClick(question.id,question.option4)'>{{question.option4}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-success" (click)='onSubmit()'>Submit</button>
+</div>
