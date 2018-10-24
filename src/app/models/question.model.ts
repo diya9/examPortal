@@ -1,9 +1,14 @@
 export class Question {
     id: number;
     question: string;
-    option1: string;
-    option2: string;
-    option3: string;
-    option4: string;
-    answer: string;
+    options: Option[];
+    answered: boolean;
+}
+
+
+export class Option {
+    id: number;
+    name: string;
+    isAnswer: boolean;
+    selected: boolean;
 }

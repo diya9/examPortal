@@ -1,5 +1,6 @@
 <nav class="navbar navbar-dark bg-primary">
     <h3>Online Examination Portal</h3>
+    <button class="btn btn primary" *ngIf='isLoggedIn ? true : false'>Log Out</button>
 </nav>
 <div class="container">
     <router-outlet></router-outlet>

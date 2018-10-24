@@ -20,14 +20,23 @@ export class ExaminationComponent implements OnInit {
     this.dataService.getQuestions().subscribe(data => this.questions = data)
   }
 
-  onClick(id,value){
-    if(id === this.questions.id && value === this.questions.answer){
-       this.result = this.result + 5;
-    }
+  onClick(question,option){
+    question.options.forEach((x) => {
+      if(x.id !== option.id)
+        x.selected = false;
+    })
+    //this.isCorrect(question);
   }
+
+  /*isCorrect(question){
+    question.options.every((x) => {
+      if(x.selected === x.isAnswer)
+        return this.result=this.result+5;
+    })
+  }*/
 
   onSubmit() {
-      console.log(this.result)
+     console.log(this.result)
+     this.route.navigate([`/dashboard/${this.name}/${this.result}`])
   }
-
 }

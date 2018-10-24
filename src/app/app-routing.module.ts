@@ -5,27 +5,30 @@ import { AdminModule } from './admin/admin.module';
 import { RegisterComponent } from './user/register/register.component';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
 import { ExaminationComponent } from './user/examination/examination.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: LoginComponent
   },
-  /*{
-    path: 'admin',
-    loadChildren: 'app/admin/admin.module#AdminModule'
-  },*/
   {
     path: 'register',
     component: RegisterComponent
   },
   {
     path: 'examPortal/:name',
-    component: ExaminationComponent
+    component: ExaminationComponent,
+    canActivate : [AuthGuard]
   },
   {
     path: 'dashboard/:name/:result',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate : [AuthGuard]
+  }
+  ,{
+    path: 'admin',
+    loadChildren: './admin/admin.module#AdminModule'
   }
 ];
 

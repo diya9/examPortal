@@ -9,7 +9,7 @@ import { DataService } from '../../services/data.service';
 })
 export class DashboardComponent implements OnInit {
 
-  result: string;
+  result: number;
   name: string;
   constructor(private dataService: DataService, private route: Router, private routes: ActivatedRoute) { }
 

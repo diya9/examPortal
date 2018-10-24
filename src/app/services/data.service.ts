@@ -9,7 +9,18 @@ import { Question } from '../models/question.model';
 })
 export class DataService {
 
-  constructor(private http: HttpClient) { }
+  isLoggedIn: boolean; 
+  constructor(private http: HttpClient) {
+    this.isLoggedIn = false;
+  }
+
+  setUserLoggedIn(value){
+    this.isLoggedIn = value;
+  }
+
+  getUserLoggedIn(){
+    return this.isLoggedIn;
+  }
 
   getUsers(): Observable<User> {
     return this.http.get<User>('http://localhost:3000/users')

@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
   user: any;
+  
   constructor(private dataService: DataService, private route: Router) { }
 
   ngOnInit() {
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
   onLogin() { 
     console.log(this.user)
     this.user.forEach((data)=> {
-      if(this.username === data.email){
+      if(this.username === data.email && this.password === data.password){
+        this.dataService.setUserLoggedIn(true);
         this.route.navigate([`/examPortal/${data.name}`])
       }
       else{

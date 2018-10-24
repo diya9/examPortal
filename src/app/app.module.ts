@@ -10,6 +10,8 @@ import { ExaminationComponent } from './user/examination/examination.component';
 import { RegisterComponent } from './user/register/register.component';
 import { LoginComponent } from './user/login/login.component';
 import { DataService } from './services/data.service';
+import { AdminModule } from './admin/admin.module';
+import { AuthGuard } from './guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -23,9 +25,10 @@ import { DataService } from './services/data.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminModule
   ],
-  providers: [DataService],
+  providers: [AuthGuard, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
